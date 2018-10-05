@@ -1,0 +1,2 @@
+Prefix plugins/NetCooperate/example/
+Plugin NetCooperate inputfile net outputfile basic_example.txt
