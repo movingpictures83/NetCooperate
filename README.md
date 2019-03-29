@@ -2,7 +2,7 @@
 # Language: Python
 # Input: Prefix (two metabolite network files)
 # Output: TXT (cooperation statistics)
-# Tested with: PluMA 1.0, Python 2.7
+# Tested with: PluMA 1.0, Python 3.6
 
 This is a PluMA plugin that takes two metabolic networks and runs 
 NetCooperate (Levy et al, 2015) to compute the likelihood of cooperation

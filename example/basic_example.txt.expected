@@ -1,6 +1,6 @@
 Example one: computing single interaction scores individually & reporting supported compounds.
 biosynthetic support:
-plugins/NetCooperate/example//net1.tab being supported by plugins/NetCooperate/example//net1.tab:	1	A,G,F,H
+plugins/NetCooperate/example//net1.tab being supported by plugins/NetCooperate/example//net1.tab:	1	A,F,H,G
 plugins/NetCooperate/example//net1.tab being supported by plugins/NetCooperate/example//net2.tab:	1	A,F
 plugins/NetCooperate/example//net2.tab being supported by plugins/NetCooperate/example//net1.tab:	0.333333	F
 plugins/NetCooperate/example//net2.tab being supported by plugins/NetCooperate/example//net2.tab:	1	F,I,J,K
