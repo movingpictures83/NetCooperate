@@ -39,7 +39,7 @@ def calculate_seeds(graph,onlyGiant=None,minComponentSize=None,seedThreshold=0):
             nodeOrder.append(source_node)
 
         for target_node in graph[source_node]:
-            if not reverse_graph.has_key(target_node):
+            if not (target_node in reverse_graph):
                 reverse_graph[target_node]=[source_node]
             else:
                 reverse_graph[target_node].append(source_node)
@@ -124,7 +124,7 @@ def calculate_seeds(graph,onlyGiant=None,minComponentSize=None,seedThreshold=0):
     # Determine which SCCs are sources
     #   Initialize to all SCCs
     SeedGroups={}
-    for i in xrange(nSCC):
+    for i in range(nSCC):
         SeedGroups[i]=[]
     #   Remove SCCs that are targets of others
     for source_node in graph:
@@ -153,10 +153,10 @@ def calculate_seeds(graph,onlyGiant=None,minComponentSize=None,seedThreshold=0):
     for group in SeedGroups.keys():
         if len(SeedGroups[group]) < sccSize[group]:
             if len(SeedGroups[group]) == 0 and 1/float(sccSize[group]) <= seedThreshold:
-                print "Removing Seed Group", group, "of size", sccSize[group]
+                print("Removing Seed Group "+str(group)+" of size "+str(sccSize[group]))
                 del SeedGroups[group]
             else:
-                print "Serious problem in SeedGroup", group, ": Expected", sccSize[group], "and found", len(SeedGroups[group]),".";
+                print("Serious problem in SeedGroup "+str(group)+" : Expected "+str(sccSize[group])+" and found "+str(len(SeedGroups[group]))+" .");
             
     return [Seeds, SeedGroups, nonSeeds, Pruned, nodes]
         
